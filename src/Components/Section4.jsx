@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import EvaluationCard from './EvaluationCard'
-
+import left from '../assets/icons/left-arrow.png'
+import right from '../assets/icons/right-arrow.png'
 
 
 function Section4() {
@@ -82,14 +83,14 @@ function Section4() {
         <h1 className='font-extrabold font-sans text-3xl text-gray-800'>Título chamativo asdadasdasd</h1>
         <h2 className='font-sans text-2xl text-gray-800 font-medium'>Mais de não sei quantas avaliações</h2>
         <div className='flex-row flex gap-4 w-4/5 overflow-hidden  p-4 rounded-lg h-70 justify-center items-center'>
-        <button onClick={handlePrev} disabled={startIndex === 0}>ANTERIOR</button>
+          <button onClick={handlePrev} disabled={startIndex === 0} className='bg-white w-10 h-10 flex justify-center rounded-3xl shadow-sm border-b-gray-400'> <img src={left} alt='Seta para esquerda' className='w-6 h-8 cursor-pointer'/> </button>
           {visibleItems.map((evaluation) => (
             <EvaluationCard
               key={evaluation.id}
               {...evaluation}
             />
           ))}
-          <button onClick={handleNext} disabled={startIndex + itemsPerPage >= evaluationList.length}>PRÓXIMO</button>
+          <button onClick={handleNext} disabled={startIndex + itemsPerPage >= evaluationList.length} className='bg-white w-10 h-10 flex justify-center rounded-3xl shadow-sm border-b-gray-400'> <img src={right} alt="Seta para direita" className='w-6 h-8 cursor-pointer'/> </button>
         </div>
             
     </div>
