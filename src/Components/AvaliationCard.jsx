@@ -1,8 +1,15 @@
 import React from 'react'
+import 
 
-function AvaliationCard() {
+function AvaliationCard({title, description, rating, date}) {
+  
   return (
-    <div>AvaliationCard</div>
+    <div>
+      <p><img src="star" alt="stars" />{rating}</p>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <span>{date}</span>
+    </div>
   )
 }
 
