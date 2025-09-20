@@ -1,9 +1,9 @@
 
 const Section = () => {
     return(
-        <section>
+        <section className="bg-stone-500">
             <div>
-                <p>asdwasd</p>
+                <p>silksong, meu sonho é desenhar onibus rj, elden ring e dog </p>
             </div>
         </section>
     )
