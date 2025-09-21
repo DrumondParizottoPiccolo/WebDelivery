@@ -29,7 +29,6 @@ const Footer =() =>{
             </div>
 
             <div  className='border-t border-gray-300 mt-8 pt-4 text-center text-gray-600'>
-                <a href="">Logo</a>
                 &copy; {new Date().getFullYear()} Feed Better | Todos os direitos reservados
             </div>
 
