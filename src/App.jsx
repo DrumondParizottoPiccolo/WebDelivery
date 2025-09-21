@@ -11,7 +11,6 @@ function App() {
       <Section/>
       <Section4/>
       <Footer/>
-
     </>
   )
 }
