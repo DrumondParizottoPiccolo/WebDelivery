@@ -1,7 +1,7 @@
 
 const Header = () => {
     return (
-        <header className='bg-orange-700 flex'>
+        <header className='bg-[#45835F] flex'>
            <div className='ml-20 p-8 space-x-10 text-white flex text-lg'>
              <nav className=' space-x-10 flex mt-2'>
                  <a href="">

@@ -79,10 +79,10 @@ function Section4() {
   const visibleItems = evaluationList.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className='w-full h-1/3 bg-red-50 flex justify-center items-center flex-col gap-4'>
-        <h1 className='font-extrabold font-sans text-3xl text-gray-800'>Título chamativo asdadasdasd</h1>
-        <h2 className='font-sans text-2xl text-gray-800 font-medium'>Mais de não sei quantas avaliações</h2>
-        <div className='flex-row flex gap-4 w-4/5 overflow-hidden  p-4 rounded-lg h-70 justify-center items-center'>
+    <div className='w-full h-full text-center bg-red-50 flex justify-center items-center flex-col gap-4'>
+        <h1 className='font-extrabold font-sans text-3xl text-gray-800 '>Mais saúde, mais sabor, mais confiança!</h1>
+        <h2 className='font-sans text-2xl text-gray-800 font-medium'>Saudável, saboroso e confiável: descubra a experiência de nossos clientes</h2>
+        <div className='w-full flex-col sm:flex-row flex gap-4 sm:w-4/5 p-4 rounded-lg sm:h-70 justify-center items-center'>
           <button onClick={handlePrev} disabled={startIndex === 0} className='bg-white w-11 h-11 flex justify-center items-center rounded-4xl px-2 shadow-sm border-b-gray-400'> <img src={left} alt='Seta para esquerda' className='w-9 h-9 cursor-pointer object-contain'/> </button>
           {visibleItems.map((evaluation) => (
             <EvaluationCard
