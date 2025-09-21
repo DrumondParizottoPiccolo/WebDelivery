@@ -26,6 +26,14 @@ const Footer =() =>{
                     <p className='cursor-pointer'>Youtube</p>
                 </div>
 
+                <div>
+                    <img 
+                        src="/FoodBetterBlack.png" 
+                        alt="Logo Food Better" 
+                        className='w-35'
+                    />
+                </div>
+
             </div>
 
             <div  className='border-t border-gray-300 mt-8 pt-4 text-center text-gray-600'>

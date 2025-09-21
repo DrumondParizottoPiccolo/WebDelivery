@@ -37,6 +37,8 @@ const Pratos = () => {
                         <p className="text-gray-800 font-medium">Opções veganas completas e deliciosas</p>
                     </div>
                 </div>
+
+                
             </div>
         </div>
     );
