@@ -10,12 +10,12 @@ function EvaluationCard({title, description, rating, date, user}) {
             <span key={i}>⭐</span>
           ))}
       </p>
-      <div className='flex flex-col h-30 gap-2 w-full'>
+      <div className='flex flex-col h-30 gap-2 w-full text-left'>
           <h3 className=' font-bold text-lg text-gray-950'>{title}</h3>
-          <p className='text-xs font-medium text-gray-900'>{description}</p>
+          <p className='text-sm sm:text-xs font-medium text-gray-900'>{description}</p>
       </div>
       
-      <span className='font-medium text-sm'>{user}, {date}</span>
+      <span className='text-left font-medium text-sm'>{user}, {date}</span>
     </div>
   )
 }
