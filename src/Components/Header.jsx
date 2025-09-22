@@ -71,11 +71,11 @@ const Header = () => {
                     </nav>
                 </div>
 
-                <div className="flex items-center space-x-4">
-                    <button className="hover:underline">
+                <div className="flex items-center space-x-4 mt-5 ml-190">
+                    <button className="cursor-pointer hover:underline">
                         Entrar
                     </button>
-                    <button className="">
+                    <button className="text-black bg-white py-2 w-30 rounded-full cursor-pointer transform translate-y-0 hover:translate-y-1 active:translate-y-2">
                         Criar Conta
                     </button>
                 </div>
