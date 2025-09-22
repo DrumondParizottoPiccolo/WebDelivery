@@ -1,34 +1,88 @@
+import {useState, useRef, useEffect} from 'react';
 
 
 const Header = () => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+            return () => {
+                document.removeEventListener('mousedown', handleClickOutside);
+            };
+    }, []);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     return (
-        <header className='bg-[#45835F] flex'>
-           <div className='ml-20 p-8 space-x-10 text-white flex text-lg'>
-             <nav className=' space-x-10 flex mt-2'>
-                 <a href="">
-                    <img 
-                    src="/FeedBetter.png" 
-                    alt="Logo food better"
-                    className="w-20" />
-                 </a>
-                 <a href="" className="mt-5 hover:underline">
-                    Menu
-                 </a>
-                 <a href="" className="mt-5 hover:underline">
-                    Combos
-                 </a>
-             </nav>
-             <nav className="flex space-x-3  ml-220">
-                <button className="flex mt-2  hover:underline cursor-pointer ">
-                    Criar Conta
-                </button>
-                <button className="bg-white p-2 w-20 rounded-full text-black transform translate-y-0 hover:translate-y-1 cursor-pointer active:translate-y-2">
-                    Entrar
-                </button>
-             </nav>
-           </div>
+        <header className="bg-[#45835F] flex">
+            <div className="ml-20 p-5 space-x-10 text-white flex text-lg">
+                <nav className="space-x-10 flex mt-2">
+                    <a href="/Home">
+                        <img src="/FeedBetter.png" 
+                        alt="Logo Food Better" 
+                        className="w-15"/>
+                    </a>
+                </nav>
+
+                <div>
+                    <nav className="flex space-x-10">
+                        <div className="relative" ref={dropdownRef}>
+                            <button 
+                            onClick={toggleDropdown}
+                            className="mt-7 cursor-pointer hover:underline flex items-center">
+                                Menu
+                                <svg className={`ml-1 w-4 h-4 transform transition-transform ${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" 
+                                    strokeLinejoin="round" 
+                                    strokeWidth={2} d="M19 9l-7 7-7-7"/>
+
+                                </svg>
+                            </button>
+                            {isDropdownOpen && (
+                                <div className="absolute left-0 mt-2 w-40 bg-[#45835F] rounded-md shadow-lg z-50">
+                                    <div className="py-1">
+                                        <a href="/Clássicos" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
+                                        Clássicos
+                                        </a>
+                                        <a href="/Vegetariano" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
+                                        Vegetariano
+                                        </a>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <a href="" className="mt-7 hover:underline">
+                            Combos
+                        </a>
+                    </nav>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                    <button className="hover:underline">
+                        Entrar
+                    </button>
+                    <button className="">
+                        Criar Conta
+                    </button>
+                </div>
+            </div>
+            
         </header>
     )
 }
 
-export default Header
+export default Header;
