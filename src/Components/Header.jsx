@@ -54,11 +54,14 @@ const Header = () => {
                             {isDropdownOpen && (
                                 <div className="absolute left-0 mt-2 w-40 bg-[#45835F] rounded-md shadow-lg z-50">
                                     <div className="py-1">
-                                        <a href="/Clássicos" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
-                                        Clássicos
+                                        <a href="/Hamburgueres" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
+                                        Hamburgueres
                                         </a>
-                                        <a href="/Vegetariano" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
-                                        Vegetariano
+                                        <a href="/Pratos variados" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
+                                        Pratos variados
+                                        </a>
+                                        <a href="/Vegano" className="block px-4 py-2 text-sm text-white cursor-pointer hover:underline">
+                                        Vegano
                                         </a>
                                     </div>
                                 </div>

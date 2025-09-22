@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Header/>
+      <Section/>
       <Section4/>
       <Pratos/>
       <Footer/>
