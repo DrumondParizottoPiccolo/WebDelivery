@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <header className="bg-[#45835F] flex">
             <div className="ml-20 p-5 space-x-10 text-white flex text-lg">
-                <nav className="space-x-10 flex mt-2">
+                <nav className="space-x-10 flex flex-col mt-2">
                     <a href="/Home">
                         <img src="/FeedBetter.png" 
                         alt="Logo Food Better" 
@@ -74,7 +74,7 @@ const Header = () => {
                     </nav>
                 </div>
 
-                <div className="flex items-center space-x-4 mt-5 ml-190">
+                <div className="flex flex-row items-center space-x-4 mt-5 ml-190">
                     <button className="cursor-pointer hover:underline">
                         Entrar
                     </button>
