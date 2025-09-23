@@ -1,5 +1,5 @@
 import {useState, useRef, useEffect} from 'react';
-
+import logo from '../../dist/FeedBetter.png'
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -23,14 +23,15 @@ const Header = () => {
     };
 
     return (
-    <header className="bg-[#45835F] flex justify-between items-center h-20 px-20">
+    <header className="bg-[#206138] flex justify-between items-center h-20 px-20">
         <nav className="flex items-center space-x-10 text-white text-lg">
-            <a href="/Home" className="hover:underline">Home</a>
+            <img src={logo} alt="" className='w-12' />
 
+            <a href="/Home" className="hover:underline font-bold">Home</a>
             <div className="relative" ref={dropdownRef}>
                 <button 
                     onClick={toggleDropdown}
-                    className="cursor-pointer hover:underline flex items-center">
+                    className="cursor-pointer font-bold hover:underline flex items-center">
                     Menu
                     <svg className={`ml-1 w-4 h-4 transform transition-transform
                      ${isDropdownOpen ? 'rotate-180' : 'rotate-0'}`}
@@ -45,15 +46,15 @@ const Header = () => {
                 </button>
 
                 {isDropdownOpen && (
-                    <div className="absolute left-0 mt-2 w-40 bg-[#45835F] rounded-md shadow-lg z-50">
+                    <div className="absolute left-0 mt-2 w-40 bg-[#206138] rounded-md shadow-lg z-50">
                         <div className="py-1">
-                            <a href="/Hamburgueres" className="block px-4 py-2 text-sm text-white hover:underline">
+                            <a href="/Hamburgueres" className="font-bold block px-4 py-2 text-sm text-white hover:underline">
                                 Hamburgueres
                             </a>
-                            <a href="/Pratos variados" className="block px-4 py-2 text-sm text-white hover:underline">
+                            <a href="/Pratos variados" className="font-bold block px-4 py-2 text-sm text-white hover:underline">
                                 Pratos variados
                             </a>
-                            <a href="/Vegano" className="block px-4 py-2 text-sm text-white hover:underline">
+                            <a href="/Vegano" className="font-bold block px-4 py-2 text-sm text-white hover:underline">
                                 Vegano
                             </a>
                         </div>
@@ -61,14 +62,14 @@ const Header = () => {
                 )}
             </div>
 
-            <a href="" className="hover:underline ">Combos</a>
+            <a href="" className="font-bold hover:underline ">Combos</a>
         </nav>
 
-        {/* Botões de login/cadastro */}
         <div className="flex items-center space-x-4">
-            <button className="text-white scale-115 mr-10 cursor-pointer color-white hover:underline">Entrar</button>
+            <button className="text-white scale-115 mr-10 
+            cursor-pointer color-white font-bold hover:underline">Entrar</button>
             <button className="text-black bg-white scale-105 py-2 px-6 rounded-full cursor-pointer 
-            hover:scale-115 transition-transform">
+            hover:scale-115 font-bold transition-transform">
                 Criar Conta
             </button>
         </div>
