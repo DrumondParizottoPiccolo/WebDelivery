@@ -15,7 +15,9 @@ const Section1 = () => {
                 Basta escolher no app, pedir e saborear-de forma prática, rápida e sofisticada, como você merece.
             </p>
             <div>
-                <button className="flex flex-col text-lg text-white font-bold mr-200 mt-3 bg-black p-2 w-40 rounded-full transform translate-y-0 hover:translate-y-1 cursor-pointer active:translate-y-2">
+                <button className="flex flex-col text-lg text-white
+                 font-bold mr-200 mt-3 bg-black p-2 w-40 rounded-full 
+                hover:scale-110 transition-transform cursor-pointer">
                     Baixar
                 </button>
             </div>
