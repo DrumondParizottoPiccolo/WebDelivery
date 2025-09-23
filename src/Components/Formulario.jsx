@@ -3,8 +3,12 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
 import food_img from "../assets/doce_wallpaper.jpg";
+import Alert from '@mui/material/Alert';
+import { useState } from 'react';
 
-const Formulario = () => {
+const Formulario = () => {  
+    const [showAlert, setShowAlert] = useState(false);
+
     return(
         <Container sx={{ 
         my: 4, display: 'flex', flexDirection: 'row', 
@@ -32,23 +36,30 @@ const Formulario = () => {
         }}
         >
         <TextField
+            required
             label="Nome"
             variant="outlined"
             sx={{ backgroundColor: 'white' }}
 
         />
         <TextField
+            required
             sx={{ backgroundColor: 'white' }}
             label="Email"
             variant="outlined"/>
         <TextField
+            required
             sx={{ backgroundColor: 'white' }}
             label="Telefone"
             variant="outlined"
             backgroundColor= 'white'
         />
+        {showAlert && 
+        <Alert severity="success" onClose={() => setShowAlert(false)}>
+            Formulário enviado com sucesso!
+        </Alert>}
         <Button
-        onClick={() => alert('Mensagem enviada com sucesso!')}
+        onClick={() => setShowAlert(true)}
         variant="contained"
         sx={{ backgroundColor: '#181818ff', '&:hover': { backgroundColor: "#68a36bff" } }}
         >
