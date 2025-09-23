@@ -25,10 +25,10 @@ const Formulario = () => {
         
         <Box width={ '50%' } height= '70vh'
         sx={{ 
-            backgroundColor: 'rgba(46, 70, 42, 1)',
+            backgroundColor: 'rgba(101, 151, 92, 1)',
             display: 'flex', flexDirection: 'column',
             p: 4, justifyContent: 'space-around', 
-            borderRadius: 4,
+            borderRadius: " 0 15px 15px 0",
         }}
         >
         <TextField
