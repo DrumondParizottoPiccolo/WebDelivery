@@ -25,7 +25,7 @@ const Formulario = () => {
         
         <Box width={ '50%' } height= '70vh'
         sx={{ 
-            backgroundColor: 'rgba(101, 151, 92, 1)',
+            backgroundColor: '#206138',
             display: 'flex', flexDirection: 'column',
             p: 4, justifyContent: 'space-around', 
             borderRadius: " 0 15px 15px 0",
@@ -50,7 +50,7 @@ const Formulario = () => {
         <Button
         onClick={() => alert('Mensagem enviada com sucesso!')}
         variant="contained"
-        sx={{ backgroundColor: '#181818ff', '&:hover': { backgroundColor: "#137739ff" } }}
+        sx={{ backgroundColor: '#181818ff', '&:hover': { backgroundColor: "#68a36bff" } }}
         >
         Enviar
         </Button>
