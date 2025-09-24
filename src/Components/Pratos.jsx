@@ -1,6 +1,6 @@
-import hamburguer from '../assets/icons/hamburguer.png';
-import comum from '../assets/icons/comum.png';
-import vegano from '../assets/icons/vegano.png';
+import hamburguer from '../assets/card_food_2.png';
+import comum from '../assets/card_food.png';
+import vegano from '../assets/vegano.png';
 
 const Pratos = () => {
     return (

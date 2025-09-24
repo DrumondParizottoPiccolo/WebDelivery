@@ -1,4 +1,4 @@
-import comum2 from '../assets/icons/comum2.png';
+import comum2 from '../assets/section_1_food.png';
 
 const Section1 = () => {
     return(

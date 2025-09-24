@@ -1,5 +1,5 @@
 import {useState, useRef, useEffect} from 'react';
-import logo from '../../dist/FeedBetter.png'
+import logo from "../assets/icons/icone_branco.png";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
