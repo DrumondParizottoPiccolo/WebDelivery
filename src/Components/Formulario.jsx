@@ -1,15 +1,13 @@
-import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
-import Typography from "@mui/material/Typography";
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Container, Box, Typography, TextField, Button, Alert } from '@mui/material';
 
-const Formulario = () => {  
-    const [showAlert, setShowAlert] = useState(false);
-    const [error, setError] = useState(false);
-    const [success, setSuccess] = useState('');
+const Formulario = () => {
+    const [formStatus, setFormStatus] = useState({
+        success: false,
+        message: '',
+        error: false,
+    });
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -26,112 +24,67 @@ const Formulario = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(false);
-        setSuccess('');
+        setFormStatus({ success: false, message: '', error: false });
 
         try {
             const response = await fetch('https://formspree.io/f/mrbybkje', {
                 method: 'POST',
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json',
                 },
                 body: JSON.stringify(formData),
             });
 
             if (!response.ok) {
-                throw new Error('Erro ao enviar mensagem!');
+                const result = await response.json();
+                throw new Error(result.error || 'Erro ao enviar a mensagem.');
             }
 
-            setSuccess('Mensagem enviada com sucesso!');
+            setFormStatus({ success: true, message: 'Mensagem enviada com sucesso!', error: false });
             setFormData({ name: '', email: '', telefone: '' });
         } catch (err) {
-            setError('Ocorreu um erro ao enviar sua mensagem.');
+            console.error('Submission Error:', err);
+            setFormStatus({ success: false, message: err.message || 'Ocorreu um erro ao enviar sua mensagem.', error: true });
         }
     };
 
     return (
-        <Container
-        disableGutters
-        sx={{ 
-            my: 4, display: 'flex', flexDirection: 'column', 
-            gap: 2, maxWidth: 1000, minHeigh: '70vh', alignItems: 'end', justifyContent: 'center', maxHeight:"150",
-        }}>
+        <Container disableGutters maxWidth="sm" sx={{ my: 8 }}>
             <Box
-                disableGutters
                 sx={{
-                    borderRadius: 5, 
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: 2,
-                    flexDirection: { xs: "column-reverse", md: "row" },
-                    maxHeight:"150vh",
+                    p: { xs: 3, md: 6 },
+                    borderRadius: 3,
+                    backgroundColor: 'white',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 3,
                 }}
-                width={'100%'}
-            >   
+            >
+                <Typography variant="h4" fontWeight={600} color="#333" textAlign="center" gutterBottom>
+                    Entre em Contato
+                </Typography>
+                <Typography variant="body1" color="#666" textAlign="center" sx={{ mb: 2 }}>
+                    Estamos prontos para te ajudar. Envie sua mensagem e entraremos em contato o mais rápido possível!
+                </Typography>
 
-                <Box  width={'auto'} height='70vh' minWidth={"50%"} maxWidth={"100%"}
-                        sx={{ 
-                        backgroundColor: '  #e9ffdb',
-                        display: 'flex', flexDirection: 'column',
-                        p: 4, justifyContent: 'space-around', 
-                        borderRadius: "0px 15px 0px",
-                        border: "solid",
-                        borderColor: "#5ad186"
-        
-                    }}>
-                        
-                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700}
-                    sx={{padding: 2}}
-                    fontSize={"5vmax"}
-                    >
-                        Curiosidades
-                    </Typography>
-                    <Box
-                      width={'100%'} height='80vh'
-                        sx={{ 
-                        backgroundColor: '  #fdfdfd',
-                        border: "solid",
-                        borderRadius: "10px",
-                        display: 'flex', flexDirection: 'column',
-                        p: 4, justifyContent: 'space-around', 
-                    }}
-                    >
-
-                    </Box>
-                    
-                </Box>
-                <Box 
-                    width={'auto'} height='70vh'
-                    sx={{ 
-                        backgroundColor: '#e9ffdb',
-                        display: 'flex', flexDirection: 'column',
-                        p: 4, justifyContent: 'space-around', 
-                        borderRadius: "15px 0px 15px",
-                        border: "solid",
-                        borderColor: "#5ad186"
-                    }}
-                    minWidth={"50%"} maxWidth={"100%"}
-                >   
-                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700} fontSize={"5vmax"}>
-                        Formulario
-                    </Typography>
-                    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-
+                <form onSubmit={handleSubmit}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                         <TextField
                             required
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Nome"
+                            label="Seu Nome Completo"
                             variant="outlined"
-                            sx={{ 
-                                backgroundColor: 'white',
-                                borderRadius: "10px", 
-                                "& .MuiOutlinedInput-root": {
-                                    "&.Mui-focused fieldset": {
-                                        borderColor: "#5ad186",
-                                    },
+                            fullWidth
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    borderRadius: '10px',
+                                    '& fieldset': { borderColor: '#E0E0E0' },
+                                    '&:hover fieldset': { borderColor: '#BDBDBD' },
+                                    '&.Mui-focused fieldset': { borderColor: '#4CAF50' },
                                 },
                             }}
                         />
@@ -140,15 +93,15 @@ const Formulario = () => {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="Email"
+                            label="Seu Email"
                             variant="outlined"
-                            sx={{ 
-                                backgroundColor: 'white',
-                                borderRadius: "10px", 
-                                "& .MuiOutlinedInput-root": {
-                                    "&.Mui-focused fieldset": {
-                                        borderColor: "#5ad186",
-                                    },
+                            fullWidth
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    borderRadius: '10px',
+                                    '& fieldset': { borderColor: '#E0E0E0' },
+                                    '&:hover fieldset': { borderColor: '#BDBDBD' },
+                                    '&.Mui-focused fieldset': { borderColor: '#4CAF50' },
                                 },
                             }}
                         />
@@ -157,43 +110,45 @@ const Formulario = () => {
                             name="telefone"
                             value={formData.telefone}
                             onChange={handleChange}
-                            placeholder="Telefone"
+                            label="Seu Telefone"
                             variant="outlined"
-                            sx={{ 
-                                backgroundColor: 'white',
-                                borderRadius: "10px", 
-                                "& .MuiOutlinedInput-root": {
-                                    "&.Mui-focused fieldset": {
-                                        borderColor: "#5ad186",
-                                    },
+                            fullWidth
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    borderRadius: '10px',
+                                    '& fieldset': { borderColor: '#E0E0E0' },
+                                    '&:hover fieldset': { borderColor: '#BDBDBD' },
+                                    '&.Mui-focused fieldset': { borderColor: '#4CAF50' },
                                 },
                             }}
                         />
-
-                        {success && (
-                            <Alert severity="success" onClose={() => setShowAlert(false)}>
-                                {success}
-                            </Alert>
-                        )}
-
-                        {error && (
-                            <Alert severity="error" onClose={() => setShowAlert(false)}>
-                                {error}
-                            </Alert>
-                        )}
-
                         <Button
                             type="submit"
                             variant="contained"
-                            sx={{ 
-                                backgroundColor: '#181818ff', 
-                                '&:hover': { backgroundColor: "#68a36bff" } 
+                            fullWidth
+                            sx={{
+                                backgroundColor: '#206138',
+                                '&:hover': { backgroundColor: '#388E3C' },
+                                mt: 2,
+                                py: 1.5,
+                                borderRadius: '10px',
                             }}
                         >
                             Enviar
                         </Button>
-                    </form>
-                </Box>
+                    </Box>
+
+                    {formStatus.success && (
+                        <Alert severity="success" sx={{ mt: 2 }}>
+                            {formStatus.message}
+                        </Alert>
+                    )}
+                    {formStatus.error && (
+                        <Alert severity="error" sx={{ mt: 2 }}>
+                            {formStatus.message}
+                        </Alert>
+                    )}
+                </form>
             </Box>
         </Container>
     );

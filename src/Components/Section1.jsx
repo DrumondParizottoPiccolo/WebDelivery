@@ -1,4 +1,4 @@
-import comum2 from '../assets/section2_1_food.png';
+import comum2 from '../assets/section2_1_food.jpg';
 
 
 const Section1 = () => {
@@ -6,8 +6,8 @@ const Section1 = () => {
     <section className="flex flex-col w-full h-150">
         <div className="flex flex-col w-full h-150 bg-cover bg-center bg-no-repeat"
         style={{backgroundImage: `url(${comum2})`}}>
-            <div className="flex flex-col w-[80vmin] h-[10vmax]  max-w-lg mt-29 ml-3 text-white">
-            <h1 className="flex flex-col font-bold text-3xl underline">
+            <div className="flex flex-col w-[80vmin] h-[10vmax]  max-w-lg mt-29 ml-3 text-black p-10">
+            <h1 className="flex flex-col font-bold text-5xl underline text-[#206138]">
                 Peça em minutos com o Feed Better
             </h1>
             <p className="flex flex-col  mt-2 text-lg font-bold space-y-2">
@@ -15,7 +15,7 @@ const Section1 = () => {
                 Basta escolher no app, pedir e saborear de forma prática, rápida e sofisticada, como você merece.
             </p>
             <button className="flex flex-col text-lg text-white
-                font-bold   mt-3 bg-black p-2 w-40 rounded-full 
+                font-bold   mt-3 bg-[#206138] p-2 w-100 rounded-full 
                 hover:scale-110 transition-transform cursor-pointer">
                     Baixar
             </button>

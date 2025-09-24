@@ -1,7 +1,7 @@
 const Footer =() =>{
     return(
-        <footer className='flex flex-col sm:block'>
-            <div className='p-5 flex flex-col sm:flex-row gap-10 border-t justify-between sm:justify-around border-gray-300'>
+        <footer className='flex flex-col sm:block bg-white pt-10'>
+            <div className='p-5 flex flex-col sm:flex-row gap-10 border-t etween sm:justify-around border-gray-300'>
                 <div className="flex justify-center sm:block">
                     <img 
                         src="/FoodBetterBlack.png" 

@@ -4,7 +4,7 @@ import React from 'react'
 function EvaluationCard({title, description, rating, date, user}) {
   
   return (
-    <div className='flex flex-col w-72 h-60 rounded-xl shadow-xl bg-white gap-4 p-4 justify-evenly align-middle'>
+    <div className='flex flex-col w-72 h-60 shadow-md rounded-xl bg-white gap-4 p-4 justify-evenly align-middle'>
       <p className='flex gap-1'>
          {Array.from({ length: Math.floor(rating) }).map((_, i) => (
             <span key={i}>⭐</span>
