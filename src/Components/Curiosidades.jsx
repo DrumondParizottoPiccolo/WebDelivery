@@ -6,23 +6,42 @@ const Curiosidades = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // aplicar uma api x:
-        const apiUrl = 'https://raw.githubusercontent.com/fernando-martins/gastronomia-curiosidades/main/curiosidades.json'; 
-
         const fetchCuriosidade = async () => {
             try {
-                const response = await fetch(apiUrl);
+                // Endpoint para busca de produtos. Usamos 'fruits' como exemplo de categoria.
+                const searchUrl = 'https://world.openfoodfacts.org/cgi/search.pl';
+                const params = new URLSearchParams({
+                    'search_terms': 'vegetables', // Você pode mudar para 'fruits', 'nuts', 'healthy food', etc.
+                    'page_size': 20,
+                    'json': true
+                });
+
+                const response = await fetch(`${searchUrl}?${params.toString()}`);
 
                 if (!response.ok) {
-                    throw new Error(`Erro ao carregar a curiosidade: ${response.status}`);
+                    throw new Error(`Erro na API: ${response.status}`);
                 }
 
                 const data = await response.json();
+
+                if (!data.products || data.products.length === 0) {
+                    throw new Error('Nenhum produto encontrado para a busca.');
+                }
                 
-                const randomFact = data[Math.floor(Math.random() * data.length)].curiosidade;
-                
-                setCuriosidade(randomFact); 
+                // Seleciona um produto aleatório da lista de resultados
+                const randomIndex = Math.floor(Math.random() * data.products.length);
+                const randomProduct = data.products[randomIndex];
+
+                // Extrai as informações relevantes para a curiosidade
+                const productName = randomProduct.product_name || 'um produto não especificado';
+                const categories = randomProduct.categories_tags ? randomProduct.categories_tags.join(', ').replace(/en:/g, '') : 'não especificadas';
+                const countries = randomProduct.countries || 'um país não especificado';
+
+                const fact = `Sabia que o "${productName}" é classificado nas categorias de "${categories}" e é originário de ${countries}?`;
+
+                setCuriosidade(fact);
                 setIsLoading(false);
+
             } catch (err) {
                 setError('Não foi possível carregar a curiosidade. Tente novamente mais tarde.');
                 setIsLoading(false);
@@ -37,10 +56,10 @@ const Curiosidades = () => {
         <div className="flex justify-center items-center py-12 px-4 md:px-8 bg-red-50 min-h-[300px]">
             <div className="bg-white p-6 rounded-lg shadow-xl max-w-2xl w-full text-center">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                    Você Sabia?
+                    Curiosidade Alimentar
                 </h2>
                 {isLoading && (
-                    <p className="text-gray-600 animate-pulse">Carregando uma curiosidade...</p>
+                    <p className="text-gray-600 animate-pulse">Carregando...</p>
                 )}
                 {error && (
                     <p className="text-red-500 font-medium">{error}</p>
