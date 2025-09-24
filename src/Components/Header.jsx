@@ -71,13 +71,12 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4">
-            <button className="text-white font-bold hover:underline whitespace-nowrap
+            <button className="text-white font-bold hover:underline cursor-pointer whitespace-nowrap
                              text-xs sm:text-sm md:text-base lg:text-lg
                              px-1 sm:px-2 md:px-4 lg:px-6 xl:px-10">
                 Entrar
             </button>
-            <button className="text-black bg-white font-bold rounded-full cursor-pointer 
-                             hover:scale-105 transition-transform whitespace-nowrap
+            <button className="text-black bg-white font-bold rounded-full cursor-pointer hover:scale-105 transition-transform whitespace-nowrap
                              text-xs sm:text-sm md:text-base lg:text-lg
                              py-1 px-3 sm:py-1.5 sm:px-4 md:py-2 md:px-5 lg:py-2 lg:px-6">
                 Criar Conta
