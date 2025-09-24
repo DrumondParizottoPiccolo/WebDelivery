@@ -8,10 +8,10 @@ const Curiosidades = () => {
     useEffect(() => {
         const fetchCuriosidade = async () => {
             try {
-                // Endpoint para busca de produtos. Usamos 'fruits' como exemplo de categoria.
+                
                 const searchUrl = 'https://world.openfoodfacts.org/cgi/search.pl';
                 const params = new URLSearchParams({
-                    'search_terms': 'vegetables', // Você pode mudar para 'fruits', 'nuts', 'healthy food', etc.
+                    'search_terms': 'vegetables', 
                     'page_size': 20,
                     'json': true
                 });
@@ -28,11 +28,11 @@ const Curiosidades = () => {
                     throw new Error('Nenhum produto encontrado para a busca.');
                 }
                 
-                // Seleciona um produto aleatório da lista de resultados
+                
                 const randomIndex = Math.floor(Math.random() * data.products.length);
                 const randomProduct = data.products[randomIndex];
 
-                // Extrai as informações relevantes para a curiosidade
+                
                 const productName = randomProduct.product_name || 'um produto não especificado';
                 const categories = randomProduct.categories_tags ? randomProduct.categories_tags.join(', ').replace(/en:/g, '') : 'não especificadas';
                 const countries = randomProduct.countries || 'um país não especificado';
