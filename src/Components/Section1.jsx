@@ -11,8 +11,8 @@ const Section1 = () => {
                 Peça em minutos com o Feed Better
             </h1>
             <p className="flex flex-col  mt-2 text-lg font-bold space-y-2">
-                Pratos exclusivos preparados para você aproveitar o melhor da gastronomia gourmet sem sair de casa.
-                Basta escolher no app, pedir e saborear de forma prática, rápida e sofisticada, como você merece.
+                Pratos saudáveis preparados para você aproveitar o melhor da gastronomia e manter sua saude em dia.
+                Basta escolher no app, pedir e saborear, rápido e sofisticado, como você e seu corpo merece.
             </p>
             <button className="flex flex-col text-lg text-white
                 font-bold   mt-3 bg-[#206138] p-2 w-full rounded-full 
