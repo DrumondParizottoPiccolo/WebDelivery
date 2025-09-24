@@ -1,5 +1,6 @@
 import {useState, useRef, useEffect} from 'react';
-import logo from "../assets/icons/icone_branco.png";
+import logo from "../assets/icons/icone_branco.png"
+import { Routes, Route, Link } from "react-router-dom";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -61,8 +62,7 @@ const Header = () => {
                     </div>
                 )}
             </div>
-
-            <a href="" className="font-bold hover:underline ">Combos</a>
+            <Link to="/combos" className="font-bold hover:underline ">Combos</Link>
         </nav>
 
         <div className="flex items-center space-x-4">

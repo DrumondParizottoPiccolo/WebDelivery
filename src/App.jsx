@@ -4,17 +4,27 @@ import Footer from './Components/Footer.jsx'
 import Pratos from './Components/Pratos.jsx'
 import Section1 from './Components/Section1.jsx'
 import Formulario from './Components/Formulario.jsx'
+import ComboRoute from './assets/routes/combos/ComboRoute.jsx'
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
   return (
     <>
-      <Header/>
-      <Section1/>
-      <Section4/>
-      <Pratos/>
-      <Formulario/>
-      <Footer/>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<>
+          <Section1 />
+          <Section4 />
+          <Pratos />
+          <Formulario />
+        </>} />
+
+        <Route path="/combos" element={<ComboRoute />} />
+      </Routes>
+
+      <Footer />
     </>
   )
 }

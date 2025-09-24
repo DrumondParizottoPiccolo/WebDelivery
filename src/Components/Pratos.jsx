@@ -11,7 +11,6 @@ const Pratos = () => {
             </div>
             
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center transition-transform">
-                {/* Card do Hambúrguer */}
                 <div className="transition-transform bg-[#f7f8f8] hover:scale-106 p-4 rounded-lg shadow-lg w-80 flex flex-col items-center text-center">
                     <img src={hamburguer} alt="hamburguer" className="w-65 mb-4" />
                     <div className="p-6">
@@ -20,7 +19,6 @@ const Pratos = () => {
                     </div>
                 </div>
 
-                {/* Card do Prato Comum */}
                 <div className="transition-transform hover:scale-106 bg-[#f7f8f8] p-4 rounded-lg shadow-lg w-80 flex flex-col items-center text-center">
                     <img src={comum} alt="prato variado" className="w-65 mb-4" />
                     <div className="p-6">
@@ -29,7 +27,6 @@ const Pratos = () => {
                     </div>
                 </div>
 
-                {/* Card Vegano */}
                 <div className="transition-transform hover:scale-106 bg-[#f7f8f8] p-4 rounded-lg shadow-lg w-80 flex flex-col items-center text-center">
                     <img src={vegano} alt="prato vegano" className="w-65 mb-4" />
                     <div className="p-6">
