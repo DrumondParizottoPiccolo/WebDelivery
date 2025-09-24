@@ -92,7 +92,7 @@ function Section4() {
         <button
           onClick={handlePrev}
           disabled={startIndex === 0}
-          className="hover:scale-140 transition-transform bg-white w-11 h-11 flex justify-center items-center rounded-4xl px-2 shadow-sm border-b-gray-400 z-10"
+          className="hover:scale-140 transition-transform bg-white w-11 h-11 flex justify-center items-center rounded-4xl px-2 shadow-sm border-b-gray-400 z-1"
         >
           <img
             src={left}
@@ -121,7 +121,7 @@ function Section4() {
         <button
           onClick={handleNext}
           disabled={startIndex + itemsPerPage >= evaluationList.length}
-          className="hover:scale-140 transition-transform  bg-white w-11 h-11 flex justify-center items-center rounded-4xl px-2 shadow-sm border-b-gray-400 z-10"
+          className="hover:scale-140 transition-transform  bg-white w-11 h-11 flex justify-center items-center rounded-4xl px-2 shadow-sm border-b-gray-400 z-1"
         >
           <img
             src={right}
