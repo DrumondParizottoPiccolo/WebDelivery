@@ -8,7 +8,7 @@ const Footer =() =>{
                     <img 
                         src="/FoodBetterBlack.png" 
                         alt="Logo Food Better" 
-                        className='ml-15 w-35'
+                        className='p5 w-35'
                     />
                 </div >
                 <div className='flex gap-35'>
