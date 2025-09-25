@@ -6,7 +6,6 @@ const ComboRoute = () => {
   return (
     <div className='w-auto h-150 flex justify-left p-4'>
       
-
     </div> 
   );
 }

@@ -50,22 +50,27 @@ const Formulario = () => {
     };
 
     return (
-        <Container sx={{ 
+        <Container
+        disableGutters
+        sx={{ 
             my: 4, display: 'flex', flexDirection: 'column', 
-            gap: 2, maxWidth: 500, height: '70vh', alignItems: 'end', justifyContent: 'center',
+            gap: 2, maxWidth: 1000, minHeigh: '70vh', alignItems: 'end', justifyContent: 'center', maxHeight:"150",
         }}>
             <Box
+                disableGutters
                 sx={{
                     borderRadius: 5, 
                     display: "flex",
-                    justifyContent: "end",
-                    alignItems: "end",
+                    justifyContent: "center",
+                    alignItems: "center",
                     gap: 2,
+                    flexDirection: { xs: "column-reverse", md: "row" },
+                    maxHeight:"150vh",
                 }}
-                width={'100%'} height='70vh'
+                width={'100%'}
             >   
 
-                <Box  width={'50%'} height='70vh'
+                <Box  width={'auto'} height='70vh' minWidth={"50%"} maxWidth={"100%"}
                         sx={{ 
                         backgroundColor: '  #e9ffdb',
                         display: 'flex', flexDirection: 'column',
@@ -73,9 +78,13 @@ const Formulario = () => {
                         borderRadius: "0px 15px 0px",
                         border: "solid",
                         borderColor: "#5ad186"
+        
                     }}>
+                        
                     <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700}
-                    sx={{padding: 2}}>
+                    sx={{padding: 2}}
+                    fontSize={"5vmax"}
+                    >
                         Curiosidades
                     </Typography>
                     <Box
@@ -93,7 +102,7 @@ const Formulario = () => {
                     
                 </Box>
                 <Box 
-                    width={'50%'} height='70vh'
+                    width={'auto'} height='70vh'
                     sx={{ 
                         backgroundColor: '#e9ffdb',
                         display: 'flex', flexDirection: 'column',
@@ -102,8 +111,9 @@ const Formulario = () => {
                         border: "solid",
                         borderColor: "#5ad186"
                     }}
+                    minWidth={"50%"} maxWidth={"100%"}
                 >   
-                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700}>
+                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700} fontSize={"5vmax"}>
                         Formulario
                     </Typography>
                     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
