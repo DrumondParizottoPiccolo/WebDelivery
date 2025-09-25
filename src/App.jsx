@@ -4,7 +4,7 @@ import Pratos from './Components/Pratos.jsx'
 import Footer from './Components/Footer.jsx'
 import Section1 from './Components/Section1.jsx'
 import Formulario from './Components/Formulario.jsx'
-import ComboRoute from './assets/routes/combos/ComboRoute.jsx'
+import ComboRoute from './combos/ComboRoute.jsx'
 import { Routes, Route } from "react-router-dom";
 
 function App() {
