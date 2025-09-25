@@ -12,7 +12,7 @@ function Filtro({ onFilterChange, activeFilter }) {
     <>
       <p
         onClick={() => setOpen(true)}
-        className="cursor-pointer bg-green-300 rounded-2xl p-2 text-center w-20 h-10 text-black/70 shadow-2xs"
+        className="cursor-pointer hover:scale-115 transition-transform bg-green-300 rounded-2xl p-2 text-center w-20 h-10 text-black/70 shadow-2xs"
       >
         Filtrar
       </p>

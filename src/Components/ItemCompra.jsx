@@ -3,7 +3,7 @@ import imagem from "../assets/vegano.png";
 
 function ItemCompra({ titulo, preco, restaurante, distancia, categoria, rev }) {
   return (
-    <div className="flex w-full flex-row min-h-40 max-h-60 rounded-2xl border-1 border-gray-400 bg-white items-center">
+    <div className="flex hover:scale-105 transition-transform w-full flex-row min-h-40 max-h-60 rounded-2xl border-1 border-gray-400 bg-white items-center">
       <img
         src={imagem}
         alt="Product displayed for purchase"
