@@ -1,18 +1,13 @@
 import Filtro from '../../../Components/Filtro';
 import Container from '@mui/material/Container';
 import Carrossel from '../../../Components/Carrossel';
+import Catalogo from '../../../Components/Catalogo';
 
-<<<<<<< HEAD
-const ComboRoute = () => { 
-   const [open, setOpen] = useState(false);
-
-=======
 const ComboRoute = () => {
->>>>>>> 948ff85e733102ffaa3d89dfbd44fe295e536482
   return (
-    <div className='w-auto h-150 flex justify-left p-4'>
+    <div className='w-auto h-150 flex flex-col justify-left'>
       <Filtro/>
-      
+      <Catalogo/>
 
     </div> 
   );
