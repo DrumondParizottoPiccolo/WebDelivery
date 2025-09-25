@@ -6,6 +6,7 @@ import Section1 from './Components/Section1.jsx'
 import Formulario from './Components/Formulario.jsx'
 import ComboRoute from './combos/ComboRoute.jsx'
 import { Routes, Route } from "react-router-dom";
+import Filtro from './Components/Filtro.jsx'
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
 
         <Route path="/combos" element={<ComboRoute />} />
       </Routes>
-      <Footer/>
+      <Footer/> 
     </>
   )
 }
