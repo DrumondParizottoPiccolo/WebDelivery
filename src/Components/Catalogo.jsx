@@ -4,7 +4,7 @@ import ItemCompra from './ItemCompra'
 
 function Catalogo() {
   return (
-    <div className='flex flex-col justify-center'>
+    <div className='flex flex-col justify-center w-full'>
         {/* <Carossel
 
         />
