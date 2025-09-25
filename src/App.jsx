@@ -1,7 +1,7 @@
 import Header from './Components/Header.jsx'
-import Section4 from './Components/Section4.jsx'
-import Footer from './Components/Footer.jsx'
+import Section4 from './Components/Section2.jsx'
 import Pratos from './Components/Pratos.jsx'
+import Footer from './Components/Footer.jsx'
 import Section1 from './Components/Section1.jsx'
 import Formulario from './Components/Formulario.jsx'
 import ComboRoute from './assets/routes/combos/ComboRoute.jsx'
@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <Header />
-
       <Routes>
         <Route path="/" element={<>
           <Section1 />
@@ -23,6 +22,7 @@ function App() {
 
         <Route path="/combos" element={<ComboRoute />} />
       </Routes>
+      <Footer/>
     </>
   )
 }
