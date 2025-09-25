@@ -2,7 +2,7 @@ import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
-import food_img from "../assets/frutas_wallpaper.jpeg";
+import food_img from "../assets/frutas_wallpaper.png";
 import Alert from '@mui/material/Alert';
 import { useState } from 'react';
 

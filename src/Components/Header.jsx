@@ -1,6 +1,6 @@
 import {useState, useRef, useEffect} from 'react';
 import logo from "../assets/icons/icone_branco.png"
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,7 +34,7 @@ const Header = () => {
                 <nav className="hidden lg:flex items-center space-x-6 xl:space-x-10 text-white text-base xl:text-lg">
                     <img src={logo} alt="Logo" className='w-10 xl:w-12' />
                     
-                    <a href="/Home" className="hover:underline font-bold">Home</a>
+                    <Link to="/" className="hover:underline font-bold"> Home</Link>
                     
                     <div className="relative" ref={dropdownRef}>
                         <button 
