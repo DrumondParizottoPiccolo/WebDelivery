@@ -2,8 +2,8 @@ import Container from "@mui/material/Container";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Box from '@mui/material/Box';
-import food_img from "../assets/frutas_wallpaper.png";
 import Alert from '@mui/material/Alert';
+import Typography from "@mui/material/Typography";
 import { useState } from 'react';
 
 const Formulario = () => {  
@@ -57,26 +57,57 @@ const Formulario = () => {
             <Box
                 sx={{
                     borderRadius: 5, 
-                    backgroundImage: `url(${food_img})`,
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'left',
                     display: "flex",
                     justifyContent: "end",
                     alignItems: "end",
+                    gap: 2,
                 }}
                 width={'100%'} height='70vh'
-            >
+            >   
+
+                <Box  width={'50%'} height='70vh'
+                        sx={{ 
+                        backgroundColor: '  #e9ffdb',
+                        display: 'flex', flexDirection: 'column',
+                        p: 4, justifyContent: 'space-around', 
+                        borderRadius: "0px 15px 0px",
+                        border: "solid",
+                        borderColor: "#5ad186"
+                    }}>
+                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700}
+                    sx={{padding: 2}}>
+                        Curiosidades
+                    </Typography>
+                    <Box
+                      width={'100%'} height='80vh'
+                        sx={{ 
+                        backgroundColor: '  #fdfdfd',
+                        border: "solid",
+                        borderRadius: "10px",
+                        display: 'flex', flexDirection: 'column',
+                        p: 4, justifyContent: 'space-around', 
+                    }}
+                    >
+
+                    </Box>
+                    
+                </Box>
                 <Box 
                     width={'50%'} height='70vh'
                     sx={{ 
-                        backgroundColor: '#206138',
+                        backgroundColor: '#e9ffdb',
                         display: 'flex', flexDirection: 'column',
                         p: 4, justifyContent: 'space-around', 
-                        borderRadius: "0 15px 15px 0",
+                        borderRadius: "15px 0px 15px",
+                        border: "solid",
+                        borderColor: "#5ad186"
                     }}
-                >
+                >   
+                    <Typography variant="h3" color="black" textAlign={"center"} fontWeight={700}>
+                        Formulario
+                    </Typography>
                     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+
                         <TextField
                             required
                             name="name"
@@ -89,7 +120,7 @@ const Formulario = () => {
                                 borderRadius: "10px", 
                                 "& .MuiOutlinedInput-root": {
                                     "&.Mui-focused fieldset": {
-                                        borderColor: "black",
+                                        borderColor: "#5ad186",
                                     },
                                 },
                             }}
@@ -106,7 +137,7 @@ const Formulario = () => {
                                 borderRadius: "10px", 
                                 "& .MuiOutlinedInput-root": {
                                     "&.Mui-focused fieldset": {
-                                        borderColor: "black",
+                                        borderColor: "#5ad186",
                                     },
                                 },
                             }}
@@ -123,7 +154,7 @@ const Formulario = () => {
                                 borderRadius: "10px", 
                                 "& .MuiOutlinedInput-root": {
                                     "&.Mui-focused fieldset": {
-                                        borderColor: "black",
+                                        borderColor: "#5ad186",
                                     },
                                 },
                             }}
