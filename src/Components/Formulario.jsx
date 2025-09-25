@@ -37,20 +37,38 @@ const Formulario = () => {
         >
         <TextField
             required
-            label="Nome"
+            placeholder="Nome"
             variant="outlined"
-            sx={{ backgroundColor: 'white' }}
+            sx={{ backgroundColor: 'white',
+                borderRadius:"10px", "& .MuiOutlinedInput-root":{
+                    "&.Mui-focused fieldset":{
+                        borderColor: "black",
+                    },
+                },
+            }}
 
         />
         <TextField
             required
-            sx={{ backgroundColor: 'white' }}
-            label="Email"
+            sx={{ backgroundColor: 'white',
+                borderRadius:"10px", "& .MuiOutlinedInput-root":{
+                    "&.Mui-focused fieldset":{
+                        borderColor: "black",
+                    },
+                },
+            }}
+            placeholder="Email"
             variant="outlined"/>
         <TextField
             required
-            sx={{ backgroundColor: 'white' }}
-            label="Telefone"
+            sx={{ backgroundColor: 'white',
+                borderRadius:"10px", "& .MuiOutlinedInput-root":{
+                    "&.Mui-focused fieldset":{
+                        borderColor: "black",
+                    },
+                },
+            }}
+            placeholder="Telefone"
             variant="outlined"
             backgroundColor= 'white'
         />
