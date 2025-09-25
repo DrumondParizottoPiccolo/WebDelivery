@@ -8,7 +8,7 @@ const ComboRoute = () => {
   return (
     <div className='w-auto h-150 flex flex-col justify-left'>
       <Filtro/>
-      <ItemCompra/>
+      <Catalogo/>
     </div> 
   );
 }

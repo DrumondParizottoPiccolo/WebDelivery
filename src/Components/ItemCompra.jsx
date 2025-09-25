@@ -27,10 +27,6 @@ import imgaem from '../assets/vegano.png'
 // ];
 
 
-
-
-
-
 // {titulo, preco, restaurante, distancia, categoria, rev}
 function ItemCompra() {
 return(
