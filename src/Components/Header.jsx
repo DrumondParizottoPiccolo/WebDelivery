@@ -1,6 +1,6 @@
 import {useState, useRef, useEffect} from 'react';
 import logo from "../assets/icons/icone_branco.png"
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
