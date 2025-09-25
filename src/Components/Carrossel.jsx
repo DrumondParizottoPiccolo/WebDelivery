@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import left from "../assets/icons/left-arrow.png";
 import right from "../assets/icons/right-arrow.png";
 
-function Carousel({ items, itemsPerPage = 3, renderItem }) {
+function Carrossel({ items, itemsPerPage = 3, renderItem }) {
   const [startIndex, setStartIndex] = useState(0);
 
   const handlePrev = () => {
@@ -81,4 +81,4 @@ function Carousel({ items, itemsPerPage = 3, renderItem }) {
   );
 }
 
-export default Carousel;
+export default Carrossel;

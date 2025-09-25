@@ -1,7 +1,9 @@
 const Footer =() =>{
     return(
-        <footer className='p-5'>
+        <footer className='p-5 '>
             <div className='p-5 flex gap-20 border-t justify-between border-gray-300'>
+
+                <div className='flex flex-col sm:flex-row gap-35'>                
                 <div>
                     <img 
                         src="/FoodBetterBlack.png" 
@@ -9,7 +11,6 @@ const Footer =() =>{
                         className='p5 w-35'
                     />
                 </div >
-                <div className='flex gap-35'>
                 <div className=' flex-1 justify-center'>
                     <h1 className='pb-3 text-xl font-bold'>Feed Better</h1>
                     <p className='cursor-pointer pb-2'>Fale Conosco</p>
