@@ -23,8 +23,6 @@ function App() {
 
         <Route path="/combos" element={<ComboRoute />} />
       </Routes>
-
-      <Section4></Section4>
     </>
   )
 }

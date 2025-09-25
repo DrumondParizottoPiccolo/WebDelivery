@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import EvaluationCard from "./EvaluationCard";
 import left from "../assets/icons/left-arrow.png";
