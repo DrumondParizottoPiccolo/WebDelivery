@@ -1,14 +1,21 @@
+import React from "react";
 import Filtro from "../Components/Filtro";
 import Container from "@mui/material/Container";
-import Carrossel from "../Components/Carrossel";
 import Catalogo from "../Components/Catalogo";
-import ItemCompra from "../Components/ItemCompra";
 
 const ComboRoute = () => {
+  const [filtroAtivo, setFiltroAtivo] = React.useState('todos');
+
+  const handleFilterChange = (novoFiltro) => {
+    setFiltroAtivo(novoFiltro);
+  };
+
   return (
-    <Container disableGutters className="w-auto flex flex-col justify-left">
-      <Filtro />
-      <Catalogo />
+    <Container disableGutters className="w-auto flex flex-col justify-left p-2 sm:p-4">
+      <div className="mb-4 sm:mb-6">
+        <Filtro onFilterChange={handleFilterChange} activeFilter={filtroAtivo} />
+      </div>
+      <Catalogo filterType={filtroAtivo} />
     </Container>
   );
 };

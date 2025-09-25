@@ -1,7 +1,12 @@
 import React from "react";
 
-function Filtro() {
+function Filtro({ onFilterChange, activeFilter }) {
   const [open, setOpen] = React.useState(false);
+
+  const handleFilterClick = (filterType) => {
+    onFilterChange(filterType);
+    setOpen(false);
+  };
 
   return (
     <>
@@ -13,27 +18,65 @@ function Filtro() {
       </p>
 
       {open && (
-        <div className="w-full h-full top-0 left-0 flex justify-center items-center fixed z-10 bg-black/20 shadow-2xl">
-          <div className="w-full sm:w-2/3 h-70 flex flex-col justify-between gap-2 p-4 bg-white rounded-2xl items-center">
-            <h3 className="text-center font-medium text-green-900/90 text-lg">
+        <div className="fixed inset-0 w-screen h-screen top-0 left-0 flex justify-center items-center z-50 bg-black/50">
+          <div className="w-[90%] sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 max-w-md 
+                         flex flex-col justify-between gap-3 sm:gap-4 
+                         p-4 sm:p-6 bg-white rounded-2xl items-center 
+                         max-h-[80vh] overflow-y-auto shadow-2xl">
+            <h3 className="text-center font-medium text-green-900/90 text-base sm:text-lg md:text-xl mb-2">
               Filtros
             </h3>
 
-            <p className="text-sm border border-gray-400/80 shadow p-2 rounded-3xl text-center cursor-pointer w-1/2">
-              Vegano
+            <p 
+              onClick={() => handleFilterClick('vegano')}
+              className={`text-xs sm:text-sm md:text-base border shadow p-2 sm:p-3 rounded-3xl text-center cursor-pointer 
+                         w-full sm:w-3/4 md:w-2/3 transition-all duration-200 ${
+                activeFilter === 'vegano' ? 'bg-green-300 border-green-500 font-semibold' : 'border-gray-400/80 hover:bg-gray-100 hover:border-gray-500'
+              }`}
+            >
+              🌱 Vegano
             </p>
-            <p className="text-sm border border-gray-400/80 shadow p-2 rounded-3xl text-center cursor-pointer w-1/2">
-              Preço Crescente
+            <p 
+              onClick={() => handleFilterClick('preco-crescente')}
+              className={`text-xs sm:text-sm md:text-base border shadow p-2 sm:p-3 rounded-3xl text-center cursor-pointer 
+                         w-full sm:w-3/4 md:w-2/3 transition-all duration-200 ${
+                activeFilter === 'preco-crescente' ? 'bg-green-300 border-green-500 font-semibold' : 'border-gray-400/80 hover:bg-gray-100 hover:border-gray-500'
+              }`}
+            >
+              💰 Preço Crescente
             </p>
-            <p className="text-sm border border-gray-400/80 shadow p-2 rounded-3xl text-center cursor-pointer w-1/2">
-              Preço Decrescente
+            <p 
+              onClick={() => handleFilterClick('preco-decrescente')}
+              className={`text-xs sm:text-sm md:text-base border shadow p-2 sm:p-3 rounded-3xl text-center cursor-pointer 
+                         w-full sm:w-3/4 md:w-2/3 transition-all duration-200 ${
+                activeFilter === 'preco-decrescente' ? 'bg-green-300 border-green-500 font-semibold' : 'border-gray-400/80 hover:bg-gray-100 hover:border-gray-500'
+              }`}
+            >
+              💸 Preço Decrescente
             </p>
-            <p className="text-sm border border-gray-400/80 shadow p-2 rounded-3xl text-center cursor-pointer w-1/2">
-              Ordem Alfabética
+            <p 
+              onClick={() => handleFilterClick('alfabetica')}
+              className={`text-xs sm:text-sm md:text-base border shadow p-2 sm:p-3 rounded-3xl text-center cursor-pointer 
+                         w-full sm:w-3/4 md:w-2/3 transition-all duration-200 ${
+                activeFilter === 'alfabetica' ? 'bg-green-300 border-green-500 font-semibold' : 'border-gray-400/80 hover:bg-gray-100 hover:border-gray-500'
+              }`}
+            >
+              🔤 Ordem Alfabética
+            </p>
+            <p 
+              onClick={() => handleFilterClick('todos')}
+              className={`text-xs sm:text-sm md:text-base border shadow p-2 sm:p-3 rounded-3xl text-center cursor-pointer 
+                         w-full sm:w-3/4 md:w-2/3 transition-all duration-200 ${
+                activeFilter === 'todos' ? 'bg-blue-300 border-blue-500 font-semibold' : 'border-gray-400/80 hover:bg-gray-100 hover:border-gray-500'
+              }`}
+            >
+              📋 Mostrar Todos
             </p>
 
             <button
-              className="cursor-pointer font-thin text-red-800"
+              className="cursor-pointer font-medium text-red-600 hover:text-red-800 
+                        mt-4 py-2 px-4 hover:bg-red-50 rounded-lg transition-all duration-200
+                        text-sm sm:text-base"
               onClick={() => setOpen(false)}
             >
               ❌ Fechar

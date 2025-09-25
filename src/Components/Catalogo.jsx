@@ -1,8 +1,7 @@
 import React from "react";
-import Carrossel from "./Carrossel";
 import ItemCompra from "./ItemCompra";
 
-// Lista 1: Pratos principais
+
 const pratosPrincipais = [
   {
     id: 1,
@@ -42,10 +41,10 @@ const pratosPrincipais = [
   },
 ];
 
-// Lista 2: Bebidas saudáveis
+
 const bebidasSaudaveis = [
   {
-    id: 1,
+    id: 5,
     titulo: "Suco Detox de Couve, Maçã e Gengibre",
     preco: 12.0,
     restaurante: "Green Power",
@@ -54,7 +53,7 @@ const bebidasSaudaveis = [
     rev: 4.5,
   },
   {
-    id: 2,
+    id: 6,
     titulo: "Kombucha de Hibisco",
     preco: 14.9,
     restaurante: "BioBebidas",
@@ -63,7 +62,7 @@ const bebidasSaudaveis = [
     rev: 4.4,
   },
   {
-    id: 3,
+    id: 7,
     titulo: "Smoothie de Frutas Vermelhas com Proteína",
     preco: 16.5,
     restaurante: "FitBar",
@@ -72,7 +71,7 @@ const bebidasSaudaveis = [
     rev: 4.9,
   },
   {
-    id: 4,
+    id: 8,
     titulo: "Suco de Laranja e Cenoura com Gengibre (Vegano)",
     preco: 13.0,
     restaurante: "Naturale",
@@ -82,10 +81,10 @@ const bebidasSaudaveis = [
   },
 ];
 
-// Lista 3: Snacks e sobremesas saudáveis
+
 const snacksESobremesas = [
   {
-    id: 1,
+    id: 9,
     titulo: "Cookies de Aveia com Banana",
     preco: 9.9,
     restaurante: "Snack Natural",
@@ -94,7 +93,7 @@ const snacksESobremesas = [
     rev: 4.3,
   },
   {
-    id: 2,
+    id: 10,
     titulo: "Brownie Vegano de Batata Doce",
     preco: 11.5,
     restaurante: "Doces do Bem",
@@ -103,7 +102,7 @@ const snacksESobremesas = [
     rev: 4.7,
   },
   {
-    id: 3,
+    id: 11,
     titulo: "Mix de Castanhas com Frutas Secas",
     preco: 13.0,
     restaurante: "NatureBites",
@@ -112,7 +111,7 @@ const snacksESobremesas = [
     rev: 4.6,
   },
   {
-    id: 4,
+    id: 12,
     titulo: "Pudim Vegano de Chia com Cacau",
     preco: 10.0,
     restaurante: "Delícias Veganas",
@@ -122,21 +121,53 @@ const snacksESobremesas = [
   },
 ];
 
-function Catalogo() {
+function Catalogo({ filterType }) {
+  
+  const todosProdutos = [...pratosPrincipais, ...bebidasSaudaveis, ...snacksESobremesas];
+
+  
+  const filtrarProdutos = (produtos, filtro) => {
+    let produtosFiltrados = [...produtos];
+
+    switch (filtro) {
+      case 'vegano':
+        produtosFiltrados = produtos.filter(produto => 
+          produto.categoria.toLowerCase().includes('vegano')
+        );
+        break;
+      case 'preco-crescente':
+        produtosFiltrados = produtos.sort((a, b) => a.preco - b.preco);
+        break;
+      case 'preco-decrescente':
+        produtosFiltrados = produtos.sort((a, b) => b.preco - a.preco);
+        break;
+      case 'alfabetica':
+        produtosFiltrados = produtos.sort((a, b) => 
+          a.titulo.localeCompare(b.titulo)
+        );
+        break;
+      case 'todos':
+      default:
+        produtosFiltrados = produtos;
+        break;
+    }
+
+    return produtosFiltrados;
+  };
+
+  const produtosFiltrados = filtrarProdutos(todosProdutos, filterType);
+
   return (
-    <div
-      className="grid grid-cols-4 min-h-[110vh]
-        justify-center w-full min gap-5"
-    >
-      {pratosPrincipais.map((prato, i) => (
-        <ItemCompra {...pratosPrincipais[i]} />
-      ))}
-      {bebidasSaudaveis.map((prato, i) => (
-        <ItemCompra {...bebidasSaudaveis[i]} />
-      ))}
-      {snacksESobremesas.map((prato, i) => (
-        <ItemCompra {...snacksESobremesas[i]} />
-      ))}
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5
+                     min-h-[110vh] justify-items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8
+                     py-2 sm:py-4 md:py-6">
+        {produtosFiltrados.map((produto) => (
+          <div key={produto.id} className="w-full min-w-[250px] max-w-[300px] h-auto">
+            <ItemCompra {...produto} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
