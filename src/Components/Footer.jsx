@@ -9,25 +9,25 @@ const Footer =() =>{
                         className='p-5 w-35'
                     />
                 </div >
-                <div className='flex flex-col sm:flex-row gap-10 sm:gap-35 text-center'>
+                <div className='flex flex-col sm:flex-row gap-10 sm:gap-35 text-start'>
                     <div className=' flex-1 justify-center'>
                         <h1 className='pb-3 text-xl font-bold'>Feed Better</h1>
-                        <p className='cursor-pointer pb-2'>Fale Conosco</p>
-                        <p className='cursor-pointer'> Trabalhe Conosco</p>
+                        <p className='cursor-pointer pb-2 hover:text-blue-500 hover:underline'>Fale Conosco</p>
+                        <p className='cursor-pointer  hover:text-blue-500 hover:underline'> Trabalhe Conosco</p>
                     </div>
 
                     <div className='flex-1'>
                         <h1 className='pb-3 text-xl font-bold'>Descubra</h1>
-                        <p className='cursor-pointer pb-2'>Cadastre seu restaurante</p>
-                        <p className='cursor-pointer pb-2'>Termos de uso</p>
+                        <p className='cursor-pointer pb-2  hover:text-blue-500 hover:underline'>Cadastre seu restaurante</p>
+                        <p className='cursor-pointer pb-2  hover:text-blue-500 hover:underline'>Termos de uso</p>
                         <p></p>
                     </div>
 
                     <div className='flex-1'>
                         <h1 className='pb-3 text-xl font-bold'>Social</h1>
-                        <p className='cursor-pointer pb-2'>Facebook</p>
-                        <p className='cursor-pointer pb-2'>Instagram</p>
-                        <p className='cursor-pointer'>Youtube</p>
+                        <p className='cursor-pointer pb-2  hover:text-blue-500 hover:underline'>Facebook</p>
+                        <p className='cursor-pointer pb-2  hover:text-blue-500 hover:underline'>Instagram</p>
+                        <p className='cursor-pointer  hover:text-blue-500 hover:underline'>Youtube</p>
                     </div>
                 </div>
             </div>
