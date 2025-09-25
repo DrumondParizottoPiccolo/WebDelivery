@@ -159,11 +159,10 @@ function Catalogo({ filterType }) {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5
-                     min-h-[110vh] justify-items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8
+      <div className="w-full flex flex-col min-h-[110vh] max-w-[2500px] justify-items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8
                      py-2 sm:py-4 md:py-6">
         {produtosFiltrados.map((produto) => (
-          <div key={produto.id} className="w-full min-w-[250px] max-w-[300px] h-auto">
+          <div key={produto.id} className="flex flex-col w-full min-w-[250px]  h-auto">
             <ItemCompra {...produto} />
           </div>
         ))}
