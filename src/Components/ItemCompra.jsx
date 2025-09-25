@@ -35,17 +35,17 @@ return(
         className='w-20 h-20 ml-5 rounded-sm'
         />
         <div className='flex flex-col p-2 w-full text-left' >
-            <h1 className='font-medium text-lg p-4 text-gray-950'>Açai delicia hum resresres </h1>
+            <h1 className='font-medium text-lg p-4 text-gray-950'>{titulo}</h1>
             <div className='flex justify-between ml-3'>
-                <p className='text-xs'>⭐4.6</p>
+                <p className='text-xs'>⭐{rev}</p>
             </div>
             <div className='flex gap-2 justify-between px-4'>
-                <p className=''>Bello res.</p>
-                <p className='font-light'>22km</p>
+                <p className=''>{restaurante}</p>
+                <p className='font-light'>{distancia}</p>
             </div>
             <div className='flex gap-2 justify-between px-4'>
-                <p className='font-thin'>Vegano</p>
-                <p className='font-light'>R$23,59</p>
+                <p className='font-thin'>{categoria}</p>
+                <p className='font-light'>{preco}</p>
             </div>
         </div>
     </div>

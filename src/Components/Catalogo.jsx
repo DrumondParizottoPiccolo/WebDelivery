@@ -28,19 +28,11 @@ const snacksESobremesas = [
 ];
 
 
-
-
-
-
 function Catalogo() {
   return (
     <div className='flex flex-col justify-center w-full'>
-      <Carrossel
-        items={pratosPrincipais}
-        itemsPerPage={3}
-        renderItem={(item)=>{<ItemCompra {...item}/>}}
-      />
-
+      
+      <ItemCompra {...pratosPrincipais[0]}/>
     </div>
   )
 }
