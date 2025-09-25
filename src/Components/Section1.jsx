@@ -6,7 +6,7 @@ const Section1 = () => {
     <section className="flex flex-col w-full h-150">
         <div className="flex flex-col w-full h-150 bg-cover bg-center bg-no-repeat"
         style={{backgroundImage: `url(${comum2})`}}>
-            <div className="flex flex-col w-1/2 max-w-lg h-50 mt-30 ml-3 text-white">
+            <div className="flex flex-col w-[80vmin] h-[10vmax]  max-w-lg mt-29 ml-3 text-white">
             <h1 className="flex flex-col font-bold text-3xl underline">
                 Peça em minutos com o Feed Better
             </h1>
