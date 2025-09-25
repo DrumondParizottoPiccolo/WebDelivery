@@ -10,7 +10,7 @@ const Pratos = () => {
                 <p className="font-sans text-2xl text-gray-800 font-medium">escolha entre uma diversidade enorme de pratos saudáveis e deliciosos</p>
             </div>
             
-            <div className="flex flex-col md:flex-row gap-8 justify-center items-center transition-transform">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 gap-6 flex-col md:flex-row gap-8 justify-center items-center transition-transform">
                 <div className="transition-transform bg-[#f7f8f8] hover:scale-106 p-4 rounded-lg shadow-lg w-80 flex flex-col items-center text-center">
                     <img src={hamburguer} alt="hamburguer" className="w-65 mb-4" />
                     <div className="p-6">
