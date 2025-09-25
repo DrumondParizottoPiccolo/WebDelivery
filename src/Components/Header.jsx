@@ -30,7 +30,7 @@ const Header = () => {
                        text-white text-xs sm:text-sm md:text-base lg:text-lg">
             <img src={logo} alt="" className='w-8 sm:w-9 md:w-10 lg:w-11 xl:w-12' />
 
-            <a href="/Home" className="hover:underline font-bold whitespace-nowrap">Home</a>
+            <Link to="/" className="hover:underline font-bold whitespace-nowrap">Home</Link>
             <div className="relative" ref={dropdownRef}>
                 <button 
                     onClick={toggleDropdown}

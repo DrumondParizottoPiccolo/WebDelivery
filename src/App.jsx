@@ -22,10 +22,8 @@ function App() {
         </>} />
 
         <Route path="/combos" element={<ComboRoute />} />
-        {/* <Route path='/Hamburgueres' element={COMPONENTE DESENVOLVIDO}/> */}
       </Routes>
 
-      {/* <Footer /> */}
       <Section4></Section4>
     </>
   )
