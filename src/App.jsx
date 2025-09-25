@@ -7,6 +7,7 @@ import Formulario from "./Components/Formulario.jsx";
 import ComboRoute from "./combos/ComboRoute.jsx";
 import { Routes, Route } from "react-router-dom";
 import Filtro from "./Components/Filtro.jsx";
+import Curiosidades from "./Components/Curiosidades.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Section1 />
               <Section4 />
               <Pratos />
+              <Curiosidades/>
               <Formulario />
             </>
           }
