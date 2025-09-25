@@ -27,8 +27,8 @@ import imgaem from '../assets/vegano.png'
 // ];
 
 
-// {titulo, preco, restaurante, distancia, categoria, rev}
-function ItemCompra() {
+// 
+function ItemCompra({titulo, preco, restaurante, distancia, categoria, rev}) {
 return(
     <div className='flex w-full h-36 rounded-2xl border-1 border-gray-400 bg-white items-center'>
         <img src={imgaem} alt="Product displayed for purchase" 
