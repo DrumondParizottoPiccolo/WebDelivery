@@ -1,4 +1,5 @@
 import { useState } from "react";
+//NÃO TIRAR O MOTION, A PORRA DA APLICAÇÃO INTEIRA BUGA SE TIRAR ESSA MERDA
 import { motion, AnimatePresence } from "framer-motion";
 import left from "../assets/icons/left-arrow.png";
 import right from "../assets/icons/right-arrow.png";
